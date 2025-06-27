@@ -1,0 +1,149 @@
+// Import Bootstrap
+@import 'bootstrap/scss/bootstrap';
+
+// Custom variables
+:root {
+  --primary-color: #007bff;
+  --secondary-color: #6c757d;
+  --success-color: #28a745;
+  --danger-color: #dc3545;
+  --warning-color: #ffc107;
+  --info-color: #17a2b8;
+  --light-color: #f8f9fa;
+  --dark-color: #343a40;
+}
+
+// Global styles
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  min-height: 100vh;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+  min-height: calc(100vh - 120px); // Subtract navbar and footer height
+  padding: 0; // Remove default padding
+}
+
+.container-fluid {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+// Ensure full width containers
+.container-fluid .container {
+  max-width: 100%;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.navbar-brand {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.product-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: none;
+  border-radius: 10px;
+  overflow: hidden;
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-img-top {
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .price {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: var(--primary-color);
+  }
+  
+  .out-of-stock {
+    opacity: 0.6;
+    .card-body {
+      background-color: #f8f9fa;
+    }
+  }
+}
+
+.sidebar {
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  padding: 1.5rem;
+  min-height: 400px;
+}
+
+.toggle-content {
+  padding: 1rem;
+  background-color: #e9ecef;
+  border-radius: 5px;
+  margin-top: 1rem;
+}
+
+.bg-selector {
+  .dropdown-menu {
+    min-width: 200px;
+  }
+}
+
+.cart-item, .wishlist-item {
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  
+  img {
+    max-width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+}
+
+.empty-state {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: #6c757d;
+  
+  i {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+  }
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+  .product-card {
+    margin-bottom: 1rem;
+  }
+  
+  .sidebar {
+    margin-bottom: 2rem;
+  }
+}
