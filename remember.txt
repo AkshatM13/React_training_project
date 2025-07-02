@@ -1,0 +1,12 @@
+bootstrap:
+    row , col
+    d-flex, children : justify, align etc
+    m-1, m-2, mb-1, mt-1, ms, me, 
+    p-1, p-2, pb-1, pt-1, ps, pe, 
+    fs-1 - font size
+    fw-bold, - font weight
+    h-1, h-100 - height
+    w-1, w-100 - width 
+    bg 
+    btn 
+     

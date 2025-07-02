@@ -1,0 +1,16 @@
+{
+  "title": "Revenue Growth",
+  "months": ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
+  "series": [
+    {
+      "name": "Revenue",
+      "data": [150, 230, 180, 280, 320, 400],
+      "color": "#5470c6"
+    },
+    {
+      "name": "Profit", 
+      "data": [50, 80, 60, 120, 150, 200],
+      "color": "#91cc75"
+    }
+  ]
+}

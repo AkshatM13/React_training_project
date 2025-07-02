@@ -1,0 +1,333 @@
+{
+  "mapConfig": {
+    "center": { "lat": 37.7749, "lng": -122.4194 },
+    "zoom": 11,
+    "markers": [
+      {
+        "id": 1,
+        "lat": 37.7849,
+        "lng": -122.4094,
+        "type": "incident",
+        "title": "Traffic Congestion",
+        "description": "Heavy traffic reported on Highway 101"
+      },
+      {
+        "id": 2,
+        "lat": 37.7649,
+        "lng": -122.4194,
+        "type": "incident", 
+        "title": "Road Construction",
+        "description": "Lane closure on Bay Bridge"
+      },
+      {
+        "id": 3,
+        "lat": 37.7949,
+        "lng": -122.3994,
+        "type": "incident",
+        "title": "Accident Reported",
+        "description": "Multi-vehicle accident on I-280"
+      },
+      {
+        "id": 4,
+        "lat": 37.7549,
+        "lng": -122.4294,
+        "type": "incident",
+        "title": "Emergency Response",
+        "description": "Emergency vehicles blocking right lane"
+      }
+    ]
+  },
+  "incidents": [
+    {
+      "id": 1,
+      "title": "Weekday Peak Traffic: Focus on reducing congestion during peak hours (7 AM - 9 AM and 4 PM - 6 PM) with targeted traffic management.",
+      "priority": "high",
+      "status": "active"
+    },
+    {
+      "id": 2,
+      "title": "Weekend Maintenance: Use weekends for road maintenance and improvements due to lower traffic volumes.",
+      "priority": "medium",
+      "status": "scheduled"
+    },
+    {
+      "id": 3,
+      "title": "Midweek Monitoring: Conduct regular traffic monitoring and adjustments during midweek to maintain smooth flow.",
+      "priority": "low",
+      "status": "active"
+    },
+    {
+      "id": 4,
+      "title": "Friday Surge: Implement traffic control measures for the Friday afternoon surge caused by early weekend departures.",
+      "priority": "high",
+      "status": "active"
+    },
+    {
+      "id": 5,
+      "title": "Maintenance for Less Busy Roads: Regularly monitor and maintain less busy roads to ensure safety and prevent degradation.",
+      "priority": "medium",
+      "status": "scheduled"
+    }
+  ],
+  "advisories": [
+    {
+      "id": 1,
+      "title": "Traffic Pattern Analysis",
+      "description": "Monitor traffic patterns and adjust signal timing for optimal flow during peak hours.",
+      "severity": "medium"
+    },
+    {
+      "id": 2,
+      "title": "Infrastructure Maintenance",
+      "description": "Schedule regular maintenance during off-peak hours to minimize traffic disruption.",
+      "severity": "low"
+    }
+  ],
+  "analytics": {
+    "overviewData": [
+      {
+        "year": "2001",
+        "value1": 819,
+        "value2": 794
+      },
+      {
+        "year": "2002",
+        "value1": 759,
+        "value2": 729
+      },
+      {
+        "year": "2003",
+        "value1": 740,
+        "value2": 748
+      },
+      {
+        "year": "2004",
+        "value1": 759,
+        "value2": 716
+      },
+      {
+        "year": "2005",
+        "value1": 740,
+        "value2": 717
+      },
+      {
+        "year": "2006",
+        "value1": 748,
+        "value2": 734
+      },
+      {
+        "year": "2007",
+        "value1": 769,
+        "value2": 737
+      },
+      {
+        "year": "2008",
+        "value1": 737,
+        "value2": 727
+      },
+      {
+        "year": "2009",
+        "value1": 762,
+        "value2": 762
+      },
+      {
+        "year": "2010",
+        "value1": 762,
+        "value2": 762
+      },
+      {
+        "year": "2011",
+        "value1": 767,
+        "value2": 762
+      },
+      {
+        "year": "2012",
+        "value1": 772,
+        "value2": 772
+      },
+      {
+        "year": "2013",
+        "value1": 786,
+        "value2": 772
+      }
+    ],
+    "transitTrips": [
+      {
+        "year": "2001",
+        "value": 455
+      },
+      {
+        "year": "2002", 
+        "value": 448
+      },
+      {
+        "year": "2003",
+        "value": 446
+      },
+      {
+        "year": "2004",
+        "value": 454
+      },
+      {
+        "year": "2005",
+        "value": 452
+      },
+      {
+        "year": "2006",
+        "value": 430
+      },
+      {
+        "year": "2007",
+        "value": 453
+      },
+      {
+        "year": "2008",
+        "value": 424
+      },
+      {
+        "year": "2009",
+        "value": 361
+      },
+      {
+        "year": "2010",
+        "value": 360
+      },
+      {
+        "year": "2011",
+        "value": 420
+      },
+      {
+        "year": "2012",
+        "value": 419
+      },
+      {
+        "year": "2013",
+        "value": 422
+      },
+      {
+        "year": "2014",
+        "value": 431
+      },
+      {
+        "year": "2015",
+        "value": 439
+      },
+      {
+        "year": "2016",
+        "value": 434
+      },
+      {
+        "year": "2017",
+        "value": 456
+      }
+    ],
+    "dailyTraffic": [
+      {
+        "year": "2001",
+        "value": 0
+      },
+      {
+        "year": "2002",
+        "value": 0
+      },
+      {
+        "year": "2003",
+        "value": 0
+      },
+      {
+        "year": "2004",
+        "value": 40
+      },
+      {
+        "year": "2005",
+        "value": 53
+      },
+      {
+        "year": "2006",
+        "value": 61
+      },
+      {
+        "year": "2007",
+        "value": 70
+      },
+      {
+        "year": "2008",
+        "value": 77
+      },
+      {
+        "year": "2009",
+        "value": 90
+      },
+      {
+        "year": "2010",
+        "value": 87
+      },
+      {
+        "year": "2011",
+        "value": 100
+      },
+      {
+        "year": "2012",
+        "value": 106
+      },
+      {
+        "year": "2013",
+        "value": 124
+      },
+      {
+        "year": "2014",
+        "value": 126
+      },
+      {
+        "year": "2015",
+        "value": 119
+      },
+      {
+        "year": "2016",
+        "value": 95
+      },
+      {
+        "year": "2017",
+        "value": 95
+      }
+    ],
+    "bikeTrips": [
+      {
+        "year": "2001",
+        "value": 17.1
+      },
+      {
+        "year": "2003",
+        "value": 12.3
+      },
+      {
+        "year": "2005",
+        "value": 18.6
+      },
+      {
+        "year": "2007",
+        "value": 19.7
+      },
+      {
+        "year": "2009",
+        "value": 19.8
+      },
+      {
+        "year": "2011",
+        "value": 19
+      },
+      {
+        "year": "2013",
+        "value": 18.8
+      },
+      {
+        "year": "2015",
+        "value": 15.8
+      },
+      {
+        "year": "2017",
+        "value": 15.3
+      }
+    ]
+  }
+}

@@ -1,8 +1,15 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { useAppContext } from '../context/AppContext';
 
-const Navbar = ({ cartItems = [], wishlistItems = [] }) => {
+const Navbar = () => {
   const location = useLocation();
+  
+  // Get data from context instead of props
+  const { cartItems, wishlistItems } = useAppContext();
+  
+  // Calculate total quantities
+  const totalCartItems = cartItems.reduce((total, item) => total + item.quantity, 0);
   
   const isActive = (path) => {
     return location.pathname === path;
@@ -62,6 +69,46 @@ const Navbar = ({ cartItems = [], wishlistItems = [] }) => {
                 Products
               </Link>
             </li>
+            <li className="nav-item">
+              <Link 
+                className={`nav-link ${isActive('/charts') ? 'active' : ''}`} 
+                to="/charts"
+              >
+                Charts
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link 
+                className={`nav-link ${isActive('/maps') ? 'active' : ''}`} 
+                to="/maps"
+              >
+                Maps
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link 
+                className={`nav-link ${isActive('/mobility') ? 'active' : ''}`} 
+                to="/mobility"
+              >
+                Mobility
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link 
+                className={`nav-link ${isActive('/overview') ? 'active' : ''}`} 
+                to="/overview"
+              >
+                Overview
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link 
+                className={`nav-link ${isActive('/deckgl') ? 'active' : ''}`} 
+                to="/deckgl"
+              >
+                Deck.gl
+              </Link>
+            </li>
           </ul>
           
           <ul className="navbar-nav">
@@ -87,9 +134,9 @@ const Navbar = ({ cartItems = [], wishlistItems = [] }) => {
               >
                 <i className="bi bi-cart"></i>
                 <span className="ms-1 d-none d-sm-inline">Cart</span>
-                {cartItems.length > 0 && (
+                {totalCartItems > 0 && (
                   <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-success">
-                    {cartItems.length}
+                    {totalCartItems}
                     <span className="visually-hidden">items in cart</span>
                   </span>
                 )}

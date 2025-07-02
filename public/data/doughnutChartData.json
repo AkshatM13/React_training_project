@@ -1,0 +1,9 @@
+{
+  "title": "Categories",
+  "data": [
+    { "value": 35, "name": "Electronics" },
+    { "value": 30, "name": "Clothing" },
+    { "value": 20, "name": "Home" },
+    { "value": 15, "name": "Sports" }
+  ]
+}

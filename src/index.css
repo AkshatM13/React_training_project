@@ -1,15 +1,5 @@
-/* Reset and full height setup */
+/* Minimal global styles - main styles are in main.scss */
 html, body {
-  height: 100%;
   margin: 0;
   padding: 0;
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-}
-
-#root {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
 }

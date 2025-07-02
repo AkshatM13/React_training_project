@@ -1,3 +1,4 @@
+//Task 2: Background Color Changer
 import React, { useState } from 'react';
 
 const Component2 = () => {

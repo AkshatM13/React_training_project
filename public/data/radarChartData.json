@@ -1,0 +1,20 @@
+{
+  "title": "Skills Assessment",
+  "indicators": [
+    { "name": "JavaScript", "max": 100 },
+    { "name": "React", "max": 100 },
+    { "name": "CSS", "max": 100 },
+    { "name": "Node.js", "max": 100 },
+    { "name": "Database", "max": 100 }
+  ],
+  "data": [
+    {
+      "value": [85, 90, 78, 70, 65],
+      "name": "Developer A"
+    },
+    {
+      "value": [75, 80, 85, 80, 75],
+      "name": "Developer B"
+    }
+  ]
+}

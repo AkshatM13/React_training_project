@@ -1,0 +1,10 @@
+{
+  "title": "Sales Funnel",
+  "data": [
+    { "value": 1000, "name": "Visitors" },
+    { "value": 500, "name": "Leads" },
+    { "value": 200, "name": "Prospects" },
+    { "value": 80, "name": "Customers" },
+    { "value": 30, "name": "Repeat Buyers" }
+  ]
+}

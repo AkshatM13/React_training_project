@@ -1,5 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useAppContext } from '../context/AppContext';
 
 const ProductCard = ({ 
   id, 
@@ -8,15 +9,24 @@ const ProductCard = ({
   imageUrl, 
   inStock, 
   category,
-  rating,
-  onAddToCart, 
-  onAddToWishlist,
-  cartItems,
-  wishlistItems 
+  rating
 }) => {
   const navigate = useNavigate();
+  
+  // Get state and functions from context instead of props
+  const { 
+    cartItems, 
+    wishlistItems, 
+    handleAddToCart, 
+    handleAddToWishlist 
+  } = useAppContext();
+  
   const isInCart = cartItems && cartItems.some(item => item.id === id);
   const isInWishlist = wishlistItems && wishlistItems.some(item => item.id === id);
+  
+  // Get quantity of this product in cart
+  const cartItem = cartItems && cartItems.find(item => item.id === id);
+  const quantityInCart = cartItem ? cartItem.quantity : 0;
 
   const handleViewDetails = () => {
     // For demo purposes, navigate to a product details page (you can create this later)
@@ -80,14 +90,13 @@ const ProductCard = ({
               
               <div className="d-flex gap-2">
                 <button
-                  className={`btn ${isInCart ? 'btn-success' : 'btn-primary'} flex-fill`}
-                  onClick={() => onAddToCart && onAddToCart({ id, name, price, imageUrl, inStock, category, rating })}
-                  disabled={isInCart}
+                  className={`btn ${quantityInCart > 0 ? 'btn-success' : 'btn-primary'} flex-fill`}
+                  onClick={() => handleAddToCart({ id, name, price, imageUrl, inStock, category, rating })}
                 >
-                  {isInCart ? (
+                  {quantityInCart > 0 ? (
                     <>
-                      <i className="bi bi-check-circle me-1"></i>
-                      In Cart
+                      <i className="bi bi-cart-check me-1"></i>
+                      In Cart ({quantityInCart})
                     </>
                   ) : (
                     <>
@@ -99,7 +108,7 @@ const ProductCard = ({
                 
                 <button
                   className={`btn ${isInWishlist ? 'btn-danger' : 'btn-outline-danger'}`}
-                  onClick={() => onAddToWishlist && onAddToWishlist({ id, name, price, imageUrl, inStock, category, rating })}
+                  onClick={() => handleAddToWishlist({ id, name, price, imageUrl, inStock, category, rating })}
                   title={isInWishlist ? 'Remove from Wishlist' : 'Add to Wishlist'}
                 >
                   <i className={`bi ${isInWishlist ? 'bi-heart-fill' : 'bi-heart'}`}></i>

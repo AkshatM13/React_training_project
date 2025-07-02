@@ -1,0 +1,16 @@
+{
+  "title": "Sales Trends",
+  "months": ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
+  "series": [
+    {
+      "name": "Sales",
+      "data": [120, 150, 100, 180, 200, 250],
+      "color": "#5470c6"
+    },
+    {
+      "name": "Revenue",
+      "data": [220, 250, 190, 280, 300, 350],
+      "color": "#91cc75"
+    }
+  ]
+}

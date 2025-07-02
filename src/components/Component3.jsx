@@ -1,9 +1,15 @@
+//// Extended product catalog with more variety
+
 import React, { useState, useMemo } from 'react';
 import ProductCard from './ProductCard';
+import { useAppContext } from '../context/AppContext';
 
-const Component3 = ({ cartItems, wishlistItems, onAddToCart, onAddToWishlist }) => {
+const Component3 = () => {
   const [sortBy, setSortBy] = useState('name');
   const [filterCategory, setFilterCategory] = useState('all');
+
+  // Get data from context instead of props
+  const { cartItems, wishlistItems, handleAddToCart, handleAddToWishlist } = useAppContext();
 
   // Extended product catalog with more variety
   const products = [
@@ -177,10 +183,6 @@ const Component3 = ({ cartItems, wishlistItems, onAddToCart, onAddToWishlist }) 
                     <div key={product.id} className="col-lg-4 col-md-6 col-sm-6 mb-4">
                       <ProductCard
                         {...product}
-                        onAddToCart={onAddToCart}
-                        onAddToWishlist={onAddToWishlist}
-                        cartItems={cartItems}
-                        wishlistItems={wishlistItems}
                       />
                     </div>
                   ))}

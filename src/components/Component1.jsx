@@ -1,3 +1,4 @@
+//Task 1: Toggle Paragraph
 import React, { useState } from 'react';
 
 const Component1 = () => {

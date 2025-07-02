@@ -1,0 +1,31 @@
+{
+  "title": "Product Categories",
+  "data": [
+    {
+      "name": "Electronics",
+      "value": 400,
+      "children": [
+        { "name": "Phones", "value": 200 },
+        { "name": "Laptops", "value": 150 },
+        { "name": "Tablets", "value": 50 }
+      ]
+    },
+    {
+      "name": "Clothing",
+      "value": 300,
+      "children": [
+        { "name": "Men", "value": 150 },
+        { "name": "Women", "value": 100 },
+        { "name": "Kids", "value": 50 }
+      ]
+    },
+    {
+      "name": "Books",
+      "value": 200,
+      "children": [
+        { "name": "Fiction", "value": 120 },
+        { "name": "Non-Fiction", "value": 80 }
+      ]
+    }
+  ]
+}

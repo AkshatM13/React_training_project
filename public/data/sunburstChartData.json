@@ -1,0 +1,35 @@
+{
+  "title": "Organization Structure",
+  "data": [
+    {
+      "name": "Company",
+      "children": [
+        {
+          "name": "Engineering",
+          "value": 50,
+          "children": [
+            { "name": "Frontend", "value": 20 },
+            { "name": "Backend", "value": 20 },
+            { "name": "DevOps", "value": 10 }
+          ]
+        },
+        {
+          "name": "Marketing",
+          "value": 30,
+          "children": [
+            { "name": "Digital", "value": 20 },
+            { "name": "Content", "value": 10 }
+          ]
+        },
+        {
+          "name": "Sales",
+          "value": 40,
+          "children": [
+            { "name": "B2B", "value": 25 },
+            { "name": "B2C", "value": 15 }
+          ]
+        }
+      ]
+    }
+  ]
+}

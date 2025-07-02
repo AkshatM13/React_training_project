@@ -1,7 +1,25 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useAppContext } from '../context/AppContext';
 
-const Cart = ({ cartItems = [], onRemoveFromCart }) => {
-  const totalAmount = cartItems.reduce((total, item) => total + item.price, 0);
+const Cart = () => {
+  const navigate = useNavigate();
+  
+  // Get data from context instead of props
+  const { 
+    cartItems, 
+    handleRemoveFromCart, 
+    handleRemoveCompletelyFromCart,
+    handleAddToCart 
+  } = useAppContext();
+  
+  // Calculate total with quantities
+  const totalAmount = cartItems.reduce((total, item) => total + (item.price * item.quantity), 0);
+  const totalItems = cartItems.reduce((total, item) => total + item.quantity, 0);
+
+  const handleContinueShopping = () => {
+    navigate('/products');
+  };
 
   if (cartItems.length === 0) {
     return (
@@ -15,10 +33,17 @@ const Cart = ({ cartItems = [], onRemoveFromCart }) => {
               </h3>
             </div>
             <div className="card-body">
-              <div className="empty-state">
-                <i className="bi bi-cart"></i>
+              <div className="empty-state text-center">
+                <i className="bi bi-cart display-1 text-muted mb-3"></i>
                 <h4>Your cart is empty</h4>
-                <p>Add some products to get started!</p>
+                <p className="text-muted mb-4">Add some products to get started!</p>
+                <button 
+                  className="btn btn-primary btn-lg"
+                  onClick={handleContinueShopping}
+                >
+                  <i className="bi bi-shop me-2"></i>
+                  Start Shopping
+                </button>
               </div>
             </div>
           </div>
@@ -36,7 +61,7 @@ const Cart = ({ cartItems = [], onRemoveFromCart }) => {
             <i className="bi bi-cart me-2"></i>
             Shopping Cart
           </h3>
-          <span className="badge bg-success">{cartItems.length} item(s)</span>
+          <span className="badge bg-success">{totalItems} item(s)</span>
         </div>
         <div className="card-body">
           <div className="row">
@@ -63,16 +88,44 @@ const Cart = ({ cartItems = [], onRemoveFromCart }) => {
                       </div>
                       <small className="text-muted">({item.rating})</small>
                     </div>
-                    <p className="price mb-0">${item.price.toFixed(2)}</p>
+                    <div className="d-flex align-items-center mb-2">
+                      <strong>Quantity: {item.quantity}</strong>
+                    </div>
+                    <p className="price mb-0">
+                      ${item.price.toFixed(2)} each
+                      <br />
+                      <strong>Total: ${(item.price * item.quantity).toFixed(2)}</strong>
+                    </p>
                   </div>
                   
-                  <div className="d-flex align-items-center">
+                  <div className="d-flex flex-column gap-2">
+                    {/* Quantity Controls */}
+                    <div className="d-flex align-items-center gap-2">
+                      <button
+                        className="btn btn-outline-secondary btn-sm"
+                        onClick={() => handleRemoveFromCart(item.id)}
+                        title="Decrease quantity"
+                      >
+                        <i className="bi bi-dash"></i>
+                      </button>
+                      <span className="fw-bold">{item.quantity}</span>
+                      <button
+                        className="btn btn-outline-secondary btn-sm"
+                        onClick={() => handleAddToCart(item)}
+                        title="Increase quantity"
+                      >
+                        <i className="bi bi-plus"></i>
+                      </button>
+                    </div>
+                    
+                    {/* Remove Completely Button */}
                     <button
-                      className="btn btn-outline-danger"
-                      onClick={() => onRemoveFromCart && onRemoveFromCart(item.id)}
+                      className="btn btn-outline-danger btn-sm"
+                      onClick={() => handleRemoveCompletelyFromCart(item.id)}
+                      title="Remove completely from cart"
                     >
                       <i className="bi bi-trash me-1"></i>
-                      Remove
+                      Remove All
                     </button>
                   </div>
                 </div>
@@ -86,7 +139,7 @@ const Cart = ({ cartItems = [], onRemoveFromCart }) => {
               <div className="col-md-6">
                 <h5>Order Summary</h5>
                 <div className="d-flex justify-content-between mb-2">
-                  <span>Items ({cartItems.length}):</span>
+                  <span>Items ({totalItems}):</span>
                   <span>${totalAmount.toFixed(2)}</span>
                 </div>
                 <div className="d-flex justify-content-between mb-2">

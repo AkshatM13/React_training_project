@@ -1,6 +1,21 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useAppContext } from '../context/AppContext';
 
-const Wishlist = ({ wishlistItems = [], onAddToCart, onRemoveFromWishlist, cartItems = [] }) => {
+const Wishlist = () => {
+  const navigate = useNavigate();
+  
+  // Get data from context instead of props
+  const { 
+    wishlistItems, 
+    cartItems, 
+    handleAddToCart, 
+    handleRemoveFromWishlist 
+  } = useAppContext();
+
+  const handleContinueShopping = () => {
+    navigate('/products');
+  };
   if (wishlistItems.length === 0) {
     return (
       <div className="container-fluid py-4">
@@ -71,7 +86,7 @@ const Wishlist = ({ wishlistItems = [], onAddToCart, onRemoveFromWishlist, cartI
                       {item.inStock ? (
                         <button
                           className={`btn ${isInCart ? 'btn-success' : 'btn-primary'}`}
-                          onClick={() => !isInCart && onAddToCart && onAddToCart(item)}
+                          onClick={() => !isInCart && handleAddToCart(item)}
                           disabled={isInCart}
                         >
                           {isInCart ? (
@@ -95,7 +110,7 @@ const Wishlist = ({ wishlistItems = [], onAddToCart, onRemoveFromWishlist, cartI
                       
                       <button
                         className="btn btn-outline-danger"
-                        onClick={() => onRemoveFromWishlist && onRemoveFromWishlist(item.id)}
+                        onClick={() => handleRemoveFromWishlist(item.id)}
                       >
                         <i className="bi bi-trash me-1"></i>
                         Remove

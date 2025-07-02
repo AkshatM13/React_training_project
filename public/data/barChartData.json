@@ -1,0 +1,16 @@
+{
+  "title": "Quarterly Performance",
+  "categories": ["Q1", "Q2", "Q3", "Q4"],
+  "series": [
+    {
+      "name": "Tech",
+      "data": [300, 280, 350, 400],
+      "color": "#5470c6"
+    },
+    {
+      "name": "Marketing", 
+      "data": [200, 250, 220, 280],
+      "color": "#91cc75"
+    }
+  ]
+}

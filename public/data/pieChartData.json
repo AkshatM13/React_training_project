@@ -1,0 +1,9 @@
+{
+  "title": "Traffic Sources",
+  "data": [
+    { "value": 40, "name": "Search" },
+    { "value": 25, "name": "Direct" },
+    { "value": 20, "name": "Social" },
+    { "value": 15, "name": "Email" }
+  ]
+}
